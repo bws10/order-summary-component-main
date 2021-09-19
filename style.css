@@ -18,6 +18,8 @@
   --clr-Very-pale-blue: hsl(225, 100%, 98%);
   --clr-Desaturated-blue: hsl(224, 23%, 55%);
   --clr-Dark-blue: hsl(223, 47%, 23%);
+  /* #### accent */
+  --clr-accent: hsl(141.3, 100%, 93.9%);
   /* ### font properties */
   --ff: "Red Hat Display", sans-serif;
   --fw-n: 500;
@@ -44,7 +46,7 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: var(--clr-Pale-blue);
+  background-color: var(--clr-accent);
   background-image: url("./images/pattern-background-desktop.svg");
   background-size: contain;
   background-repeat: repeat-x;

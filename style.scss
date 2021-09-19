@@ -43,7 +43,19 @@ $breakpoints: (
   --fw-b: 900;
   --fs-p: 1rem;
   --fs-3: 1rem;
-  --fs-2: 1.5rem;
+  --fs-2: 2rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
 
 body {
@@ -59,7 +71,7 @@ body {
   background-repeat: repeat-x;
   font-family: var(--ff);
   line-height: 1.5rem;
-
+  color: var(--clr-Dark-blue);
   @include mq(small) {
     background-image: url("./images/pattern-background-mobile.svg");
   }
@@ -68,6 +80,7 @@ body {
 .heading {
   font-weight: var(--fw-b);
   font-size: var(--fs-2);
+  margin-block: 0.5em;
 }
 
 p {
@@ -82,240 +95,10 @@ p {
 }
 
 .card {
-  max-width: 420px;
-  min-width: 270px;
+  max-width: 450px;
+  min-width: 315px;
   width: 87vw;
   border-radius: 1.5em;
-  @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
-
-  $breakpoints: (
-    small: 376px,
-    medium: 800px,
-    large: 1100px,
-  );
-
-  @mixin mq($key) {
-    $size: map-get($breakpoints, $key);
-
-    @media only screen and (max-width: $size) {
-      @content;
-    }
-  }
-
-  * {
-    box-sizing: border-box;
-
-    &::before,
-    &::after {
-      box-sizing: border-box;
-    }
-  }
-
-  :root {
-    /* ### Primary */
-
-    --clr-Pale-blue: hsl(225, 100%, 94%);
-    --clr-Bright-blue: hsl(245, 75%, 52%);
-
-    /* ### Neutral */
-
-    --clr-Very-pale-blue: hsl(225, 100%, 98%);
-    --clr-Desaturated-blue: hsl(224, 23%, 55%);
-    --clr-Dark-blue: hsl(223, 47%, 23%);
-
-    /* ### font properties */
-
-    --ff: "Red Hat Display", sans-serif;
-    --fw-n: 500;
-    --fw-m: 700;
-    --fw-b: 900;
-    --fs-p: 1rem;
-    --fs-3: 1rem;
-    --fs-2: 2rem;
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap; /* added line */
-    border: 0;
-  }
-
-  body {
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--clr-Pale-blue);
-    background-image: url("./images/pattern-background-desktop.svg");
-    background-size: contain;
-    background-repeat: repeat-x;
-    font-family: var(--ff);
-    line-height: 1.5rem;
-    color: var(--clr-Dark-blue);
-    @include mq(small) {
-      background-image: url("./images/pattern-background-mobile.svg");
-    }
-  }
-
-  .heading {
-    font-weight: var(--fw-b);
-    font-size: var(--fs-2);
-    margin-block: 0.5em;
-  }
-
-  p {
-    color: var(--clr-Desaturated-blue);
-    max-width: 30ch;
-    font-size: var(--fs-p);
-    font-weight: var(--fw-n);
-
-    @include mq(small) {
-      max-width: 25ch;
-    }
-  }
-
-  .card {
-    max-width: 450px;
-    min-width: 315px;
-    width: 87vw;
-    border-radius: 1.5em;
-
-    /* border: 5px red solid; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    text-align: center;
-    background: white;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .cardContent {
-    padding: 2em;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
-    text-align: center;
-  }
-
-  .subscription-container {
-    display: grid;
-    // grid-template-rows: 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "Icon Plan    Change"
-      "Icon Payment Change";
-
-    font-size: var(--fs-p);
-    font-weight: var(--fw-b);
-    width: 100%;
-    align-items: center;
-    background: var(--clr-Very-pale-blue);
-    border-radius: 10px;
-    margin-block: 20px;
-    // padding: 10px;
-
-    .musicalNote {
-      grid-area: Icon;
-      width: max-content;
-      justify-self: center;
-      padding-block: 1.5rem;
-    }
-
-    h3 {
-      grid-area: Plan;
-      align-self: end;
-      justify-self: start;
-      margin: 0;
-      font-weight: inherit;
-      word-wrap: unset;
-      font-size: clamp(0.5rem, var(--fs-3), var(--fs-3));
-      color: var(--clr-Dark-blue);
-    }
-
-    p {
-      grid-area: Payment;
-      align-self: start;
-      justify-self: start;
-      margin: 0;
-      font-weight: var(--fw-m);
-    }
-
-    a {
-      grid-area: Change;
-      color: var(--clr-Bright-blue);
-      font-weight: inherit;
-      transition: opacity 100ms ease-in-out;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
-
-  .button {
-    background: var(--clr-Bright-blue);
-
-    border-radius: 0.7em;
-    width: 100%;
-
-    margin: 1em 0;
-    font-weight: var(--fw-m);
-    font-size: var(--fs-p);
-    box-shadow: 0px 20px 10px var(--clr-Pale-blue);
-    transition: opacity 100ms ease-in-out;
-
-    & a {
-      color: var(--clr-Very-pale-blue);
-      line-height: 3rem;
-      text-decoration: none;
-    }
-    &:hover {
-      opacity: 0.7;
-      cursor: pointer;
-    }
-  }
-
-  .cancel {
-    // position: relative;
-    font-weight: var(--fw-b);
-    color: var(--clr-Desaturated-blue);
-    // padding-block: 10em;
-    transition: color 100ms ease-in-out;
-    text-decoration: none;
-    line-height: 3em;
-    &:visited {
-      color: var(--clr-Desaturated-blue);
-    }
-    &:hover {
-      color: var(--clr-Dark-blue);
-      cursor: pointer;
-    }
-  }
-
-  .attribution {
-    font-size: 11px;
-    text-align: center;
-
-    a {
-      color: hsl(228, 45%, 44%);
-    }
-  }
 
   /* border: 5px red solid; */
   display: flex;
@@ -374,6 +157,7 @@ p {
     font-weight: inherit;
     word-wrap: unset;
     font-size: clamp(0.5rem, var(--fs-3), var(--fs-3));
+    color: var(--clr-Dark-blue);
   }
 
   p {
@@ -398,8 +182,7 @@ p {
 
 .button {
   background: var(--clr-Bright-blue);
-  color: var(--clr-Very-pale-blue);
-  line-height: 3rem;
+
   border-radius: 0.7em;
   width: 100%;
 
@@ -409,19 +192,30 @@ p {
   box-shadow: 0px 20px 10px var(--clr-Pale-blue);
   transition: opacity 100ms ease-in-out;
 
+  & a {
+    color: var(--clr-Very-pale-blue);
+    line-height: 3rem;
+    text-decoration: none;
+  }
   &:hover {
     opacity: 0.7;
     cursor: pointer;
   }
 }
 
-.cancel p {
+.cancel {
+  // position: relative;
   font-weight: var(--fw-b);
-  margin: 0;
+  color: var(--clr-Desaturated-blue);
+  // padding-block: 10em;
   transition: color 100ms ease-in-out;
-
+  text-decoration: none;
+  line-height: 3em;
+  &:visited {
+    color: var(--clr-Desaturated-blue);
+  }
   &:hover {
-    color: black;
+    color: var(--clr-Dark-blue);
     cursor: pointer;
   }
 }

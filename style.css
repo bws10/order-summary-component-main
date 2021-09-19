@@ -1,25 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 * {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-*::before,
-*::after {
+*::before, *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
   /* ### Primary */
   --clr-Pale-blue: hsl(225, 100%, 94%);
   --clr-Bright-blue: hsl(245, 75%, 52%);
+  --clr-accent: hsl(141, 83%, 84%);
   /* ### Neutral */
   --clr-Very-pale-blue: hsl(225, 100%, 98%);
   --clr-Desaturated-blue: hsl(224, 23%, 55%);
   --clr-Dark-blue: hsl(223, 47%, 23%);
-  /* #### accent */
-  --clr-accent: hsl(141.3, 100%, 93.9%);
   /* ### font properties */
   --ff: "Red Hat Display", sans-serif;
   --fw-n: 500;
@@ -38,14 +36,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: var(--clr-accent);
   background-image: url("./images/pattern-background-desktop.svg");
   background-size: contain;
@@ -88,15 +86,15 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
   text-align: center;
   background: white;
@@ -113,15 +111,15 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
   text-align: center;
 }
@@ -129,15 +127,13 @@ p {
 .subscription-container {
   display: -ms-grid;
   display: grid;
-  grid-template-areas:
-    "Icon Plan    Change"
-    "Icon Payment Change";
+      grid-template-areas: "Icon Plan    Change" "Icon Payment Change";
   font-size: var(--fs-p);
   font-weight: var(--fw-b);
   width: 100%;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: var(--clr-Very-pale-blue);
   border-radius: 10px;
   margin-block: 20px;
@@ -152,7 +148,7 @@ p {
   width: -moz-max-content;
   width: max-content;
   -ms-grid-column-align: center;
-  justify-self: center;
+      justify-self: center;
   padding-block: 1.5rem;
 }
 
@@ -161,10 +157,10 @@ p {
   -ms-grid-column: 2;
   grid-area: Plan;
   -ms-flex-item-align: end;
-  -ms-grid-row-align: end;
-  align-self: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   -ms-grid-column-align: start;
-  justify-self: start;
+      justify-self: start;
   margin: 0;
   font-weight: inherit;
   word-wrap: unset;
@@ -176,10 +172,10 @@ p {
   -ms-grid-column: 2;
   grid-area: Payment;
   -ms-flex-item-align: start;
-  -ms-grid-row-align: start;
-  align-self: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   -ms-grid-column-align: start;
-  justify-self: start;
+      justify-self: start;
   margin: 0;
   font-weight: var(--fw-m);
 }
@@ -209,7 +205,7 @@ p {
   font-weight: var(--fw-m);
   font-size: var(--fs-p);
   -webkit-box-shadow: 0px 20px 10px var(--clr-Pale-blue);
-  box-shadow: 0px 20px 10px var(--clr-Pale-blue);
+          box-shadow: 0px 20px 10px var(--clr-Pale-blue);
   -webkit-transition: opacity 100ms ease-in-out;
   transition: opacity 100ms ease-in-out;
 }

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -97,6 +98,263 @@ p {
   overflow: hidden;
   text-align: center;
   background: white;
+}
+
+.card * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card *::before, .card *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card :root {
+  /* ### Primary */
+  --clr-Pale-blue: hsl(225, 100%, 94%);
+  --clr-Bright-blue: hsl(245, 75%, 52%);
+  /* ### Neutral */
+  --clr-Very-pale-blue: hsl(225, 100%, 98%);
+  --clr-Desaturated-blue: hsl(224, 23%, 55%);
+  --clr-Dark-blue: hsl(223, 47%, 23%);
+  /* ### font properties */
+  --ff: "Red Hat Display", sans-serif;
+  --fw-n: 500;
+  --fw-m: 700;
+  --fw-b: 900;
+  --fs-p: 1rem;
+  --fs-3: 1rem;
+  --fs-2: 2rem;
+}
+
+.card .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  /* added line */
+  border: 0;
+}
+
+.card body {
+  height: 100vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--clr-Pale-blue);
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+  font-family: var(--ff);
+  line-height: 1.5rem;
+  color: var(--clr-Dark-blue);
+}
+
+@media only screen and (max-width: 376px) {
+  .card body {
+    background-image: url("./images/pattern-background-mobile.svg");
+  }
+}
+
+.card .heading {
+  font-weight: var(--fw-b);
+  font-size: var(--fs-2);
+  margin-block: 0.5em;
+}
+
+.card p {
+  color: var(--clr-Desaturated-blue);
+  max-width: 30ch;
+  font-size: var(--fs-p);
+  font-weight: var(--fw-n);
+}
+
+@media only screen and (max-width: 376px) {
+  .card p {
+    max-width: 25ch;
+  }
+}
+
+.card .card {
+  max-width: 450px;
+  min-width: 315px;
+  width: 87vw;
+  border-radius: 1.5em;
+  /* border: 5px red solid; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  background: white;
+}
+
+.card .card img {
+  width: 100%;
+}
+
+.card .cardContent {
+  padding: 2em;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card .subscription-container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "Icon Plan    Change" "Icon Payment Change";
+  font-size: var(--fs-p);
+  font-weight: var(--fw-b);
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--clr-Very-pale-blue);
+  border-radius: 10px;
+  margin-block: 20px;
+}
+
+.card .subscription-container .musicalNote {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: Icon;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+      justify-self: center;
+  padding-block: 1.5rem;
+}
+
+.card .subscription-container h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: Plan;
+  -ms-flex-item-align: end;
+      align-self: end;
+      justify-self: start;
+  margin: 0;
+  font-weight: inherit;
+  word-wrap: unset;
+  font-size: clamp(0.5rem, var(--fs-3), var(--fs-3));
+  color: var(--clr-Dark-blue);
+}
+
+.card .subscription-container p {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: Payment;
+  -ms-flex-item-align: start;
+      align-self: start;
+      justify-self: start;
+  margin: 0;
+  font-weight: var(--fw-m);
+}
+
+.card .subscription-container a {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: Change;
+  color: var(--clr-Bright-blue);
+  font-weight: inherit;
+  -webkit-transition: opacity 100ms ease-in-out;
+  transition: opacity 100ms ease-in-out;
+}
+
+.card .subscription-container a:hover {
+  opacity: 0.7;
+}
+
+.card .button {
+  background: var(--clr-Bright-blue);
+  border-radius: 0.7em;
+  width: 100%;
+  margin: 1em 0;
+  font-weight: var(--fw-m);
+  font-size: var(--fs-p);
+  -webkit-box-shadow: 0px 20px 10px var(--clr-Pale-blue);
+          box-shadow: 0px 20px 10px var(--clr-Pale-blue);
+  -webkit-transition: opacity 100ms ease-in-out;
+  transition: opacity 100ms ease-in-out;
+}
+
+.card .button a {
+  color: var(--clr-Very-pale-blue);
+  line-height: 3rem;
+  text-decoration: none;
+}
+
+.card .button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.card .cancel {
+  font-weight: var(--fw-b);
+  color: var(--clr-Desaturated-blue);
+  -webkit-transition: color 100ms ease-in-out;
+  transition: color 100ms ease-in-out;
+  text-decoration: none;
+  line-height: 3em;
+}
+
+.card .cancel:visited {
+  color: var(--clr-Desaturated-blue);
+}
+
+.card .cancel:hover {
+  color: var(--clr-Dark-blue);
+  cursor: pointer;
+}
+
+.card .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.card .attribution a {
+  color: #3e52a3;
 }
 
 .card img {

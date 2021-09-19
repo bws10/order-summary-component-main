@@ -43,7 +43,19 @@ $breakpoints: (
   --fw-b: 900;
   --fs-p: 1rem;
   --fs-3: 1rem;
-  --fs-2: 1.5rem;
+  --fs-2: 2rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
 }
 
 body {
@@ -54,20 +66,21 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--clr-Pale-blue);
-  background-image: url("images/pattern-background-desktop.svg");
+  background-image: url("./images/pattern-background-desktop.svg");
   background-size: contain;
   background-repeat: repeat-x;
   font-family: var(--ff);
   line-height: 1.5rem;
-
+  color: var(--clr-Dark-blue);
   @include mq(small) {
-    background-image: url("images/pattern-background-mobile.svg");
+    background-image: url("./images/pattern-background-mobile.svg");
   }
 }
 
 .heading {
   font-weight: var(--fw-b);
   font-size: var(--fs-2);
+  margin-block: 0.5em;
 }
 
 p {
@@ -82,8 +95,8 @@ p {
 }
 
 .card {
-  max-width: 420px;
-  min-width: 270px;
+  max-width: 450px;
+  min-width: 315px;
   width: 87vw;
   border-radius: 1.5em;
 
@@ -144,6 +157,7 @@ p {
     font-weight: inherit;
     word-wrap: unset;
     font-size: clamp(0.5rem, var(--fs-3), var(--fs-3));
+    color: var(--clr-Dark-blue);
   }
 
   p {
@@ -168,8 +182,7 @@ p {
 
 .button {
   background: var(--clr-Bright-blue);
-  color: var(--clr-Very-pale-blue);
-  line-height: 3rem;
+
   border-radius: 0.7em;
   width: 100%;
 
@@ -179,19 +192,30 @@ p {
   box-shadow: 0px 20px 10px var(--clr-Pale-blue);
   transition: opacity 100ms ease-in-out;
 
+  & a {
+    color: var(--clr-Very-pale-blue);
+    line-height: 3rem;
+    text-decoration: none;
+  }
   &:hover {
     opacity: 0.7;
     cursor: pointer;
   }
 }
 
-.cancel p {
+.cancel {
+  // position: relative;
   font-weight: var(--fw-b);
-  margin: 0;
+  color: var(--clr-Desaturated-blue);
+  // padding-block: 10em;
   transition: color 100ms ease-in-out;
-
+  text-decoration: none;
+  line-height: 3em;
+  &:visited {
+    color: var(--clr-Desaturated-blue);
+  }
   &:hover {
-    color: black;
+    color: var(--clr-Dark-blue);
     cursor: pointer;
   }
 }

@@ -2,7 +2,7 @@
 
 $breakpoints: (
   small: 376px,
-  medium: 800px,
+  medium: 450px,
   large: 1100px,
 );
 
@@ -43,7 +43,7 @@ $breakpoints: (
   --fw-b: 900;
   --fs-p: 1rem;
   --fs-3: 1rem;
-  --fs-2: 2rem;
+  --fs-2: 1.8rem;
 }
 
 .sr-only {
@@ -81,6 +81,7 @@ body {
   font-weight: var(--fw-b);
   font-size: var(--fs-2);
   margin-block: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 p {
@@ -124,6 +125,10 @@ p {
   flex-direction: column;
   overflow: hidden;
   text-align: center;
+
+  @include mq(medium) {
+    padding: 2em 2em;
+  }
 }
 
 .subscription-container {

@@ -82,6 +82,7 @@ p {
   max-width: 30ch;
   font-size: var(--fs-p);
   font-weight: var(--fw-n);
+  margin: 0;
 }
 
 @media only screen and (max-width: 376px) {
@@ -119,7 +120,7 @@ p {
 }
 
 .cardContent {
-  padding: 2em;
+  padding: 2em 3em;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://bws10.github.io/order-summary-component-main/](https://bws10.github.io/order-summary-component-main/)
 
 ## My process
 
